@@ -1,4 +1,4 @@
-import QtQuick 2.12
+import QtQuick
 
 	// The collection logo on the collection carousel.
 

@@ -1,4 +1,4 @@
-import QtQuick 2.12
+import QtQuick
 
 	// A carousel is a PathView that goes horizontally and keeps its current item in the center.
 

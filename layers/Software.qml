@@ -1,5 +1,5 @@
-import QtQuick 2.12
-import QtGraphicalEffects 1.12
+import QtQuick
+import Qt5Compat.GraphicalEffects
 
 
 	//Properties to display the list and images in the current collection

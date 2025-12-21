@@ -1,5 +1,5 @@
-import QtQuick 2.12
-import QtGraphicalEffects 1.12
+import QtQuick
+import Qt5Compat.GraphicalEffects
 
 
 	//The collections view consists of two carousels, one for the collection logo bar and one for the background images.
