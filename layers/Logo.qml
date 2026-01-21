@@ -3,8 +3,9 @@ import QtQuick
 	// The collection logo on the collection carousel.
 
 	Item {
-		property string longName: "" 
-		property string shortName: "" 
+		property string longName: ""
+		property string shortName: ""
+		property string logoUrl: ""  // Use assets.logo from Rift
 		property bool selected: PathView.isCurrentItem
 
 		width: aspectRatio === 43 ? vpx(255*screenRatio) : vpx(255*screenRatio)
@@ -17,7 +18,7 @@ import QtQuick
 	Image {
 		id: image
 		fillMode: Image.PreserveAspectFit
-		source: shortName ? "../assets/images/logos/%1.svg".arg(shortName) : ""
+		source: logoUrl
 		asynchronous: true
 		sourceSize { width: 256; height: 256 } 
 		scale: selected ? 1.0 : 0.66

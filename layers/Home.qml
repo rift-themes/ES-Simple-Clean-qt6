@@ -53,7 +53,7 @@ import Qt5Compat.GraphicalEffects
 	Image {
 		id: realBg
 		fillMode: Image.PreserveAspect
-		source: modelData.shortName ? "../assets/images/backgrounds/%1_art_blur.png".arg(modelData.shortName) : ""
+		source: modelData.assets?.background ?? ""
 		asynchronous: true
 
 		anchors {
@@ -185,6 +185,7 @@ import Qt5Compat.GraphicalEffects
 	Logo {
 		longName: modelData.name
 		shortName: modelData.shortName
+		logoUrl: modelData.assets?.logo ?? ""
 }
 
 		focus: true

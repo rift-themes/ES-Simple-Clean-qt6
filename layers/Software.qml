@@ -55,7 +55,7 @@ import Qt5Compat.GraphicalEffects
 		sourceSize.height: aspectRatio === 43 ? parent.height - header.paddingV * 1 : parent.height - header.paddingV * 2
 		fillMode: Image.PreserveAspectFit
 		horizontalAlignment: Image.AlignLeft
-		source: currentCollection.shortName ? "../assets/images/logos/%1.svg".arg(currentCollection.shortName) : ""
+		source: currentCollection.assets?.logo ?? ""
 		asynchronous: true
 
 	anchors {
