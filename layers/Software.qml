@@ -1,5 +1,6 @@
 import QtQuick
 import Qt5Compat.GraphicalEffects
+import Rift 1.0
 
 
 	//Properties to display the list and images in the current collection
@@ -13,6 +14,13 @@ import Qt5Compat.GraphicalEffects
 		height: parent.height
 		enabled: focus
 		visible: y < parent.height
+
+	// Notify Rift of the current game for SELECT menu
+	onCurrentGameChanged: {
+		if (currentGame && currentGame.extra && currentGame.extra.id) {
+			Rift.setContextGameById(currentGame.extra.id)
+		}
+	}
 
 	Keys.onPressed: {
 
@@ -55,7 +63,7 @@ import Qt5Compat.GraphicalEffects
 		sourceSize.height: aspectRatio === 43 ? parent.height - header.paddingV * 1 : parent.height - header.paddingV * 2
 		fillMode: Image.PreserveAspectFit
 		horizontalAlignment: Image.AlignLeft
-		source: currentCollection.assets?.logo ?? ""
+		source: (currentCollection.assets?.logo ?? "").replace("/logos/", "/logos-dark/")
 		asynchronous: true
 
 	anchors {

@@ -8,9 +8,12 @@ import QtQuick
 		property string logoUrl: ""  // Use assets.logo from Rift
 		property bool selected: PathView.isCurrentItem
 
+		// Force dark logos for this light-themed theme
+		property string darkLogoUrl: logoUrl.replace("/logos/", "/logos-dark/")
+
 		width: aspectRatio === 43 ? vpx(255*screenRatio) : vpx(255*screenRatio)
 		height: aspectRatio === 43 ? vpx(75*screenRatio) : vpx(75*screenRatio)
-		visible: PathView.onPath 
+		visible: PathView.onPath
 		opacity: selected ? 1.0 : 0.5
 		Behavior on opacity { NumberAnimation { duration: 150 } }
 
@@ -18,7 +21,7 @@ import QtQuick
 	Image {
 		id: image
 		fillMode: Image.PreserveAspectFit
-		source: logoUrl
+		source: darkLogoUrl
 		asynchronous: true
 		sourceSize { width: 256; height: 256 } 
 		scale: selected ? 1.0 : 0.66

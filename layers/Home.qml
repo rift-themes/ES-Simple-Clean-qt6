@@ -52,14 +52,23 @@ import Qt5Compat.GraphicalEffects
 
 	Image {
 		id: realBg
-		fillMode: Image.PreserveAspect
+		fillMode: Image.PreserveAspectCrop
 		source: modelData.assets?.background ?? ""
 		asynchronous: true
+		visible: false
 
 		anchors {
 			fill: parent
 		}
 
+	}
+
+	// Blur effect layer
+	FastBlur {
+		anchors.fill: realBg
+		source: realBg
+		radius: 32
+		visible: realBg.status === Image.Ready
 	}
 
 }

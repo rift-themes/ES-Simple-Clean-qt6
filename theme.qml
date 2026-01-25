@@ -1,9 +1,15 @@
 import QtQuick
+import Rift 1.0
 import "layers" as Layers
 
 
 	FocusScope {
 		id: root
+
+	// Show the global Rift footer with light colors to match theme
+	property bool footerVisible: true
+	property color footerBackgroundColor: "#c5c6c7"
+	property color footerTextColor: "#333333"
 
 	// When the theme loads, try to restore the last selected game and collection.
 
