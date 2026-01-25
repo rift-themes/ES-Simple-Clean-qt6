@@ -11,6 +11,15 @@ import "layers" as Layers
 	property color footerBackgroundColor: "#c5c6c7"
 	property color footerTextColor: "#333333"
 
+	// Menu customization (SELECT, START, Settings) - Light ES-DE style
+	property color menuBackgroundColor: "#e8e8e8"
+	property color menuTextColor: "#333333"
+	property color menuAccentColor: "#4a90d9"
+	property color menuSecondaryColor: "#f5f5f5"
+	property color menuBorderColor: "#cccccc"
+	property real menuBackgroundOpacity: 0.98
+	property string menuFontFamily: ""
+
 	// When the theme loads, try to restore the last selected game and collection.
 
 	Component.onCompleted: {
