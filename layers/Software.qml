@@ -1,6 +1,7 @@
 import QtQuick
 import Qt5Compat.GraphicalEffects
 import Rift 1.0
+import ".."
 
 
 	//Properties to display the list and images in the current collection
@@ -126,9 +127,20 @@ import Rift 1.0
 		sourceSize { width: 256; height: 256 }
 		fillMode: Image.PreserveAspectFit
 		asynchronous: true
+		cache: true
 
 	anchors {
 		fill: parent
+	}
+
+	DownloadingSpinner {
+		gameData: currentGame
+		targetImage: boxartImage
+		sourceBinding: function() {
+			var g = currentGame
+			if (!g || !g.assets) return ""
+			return g.assets.boxFront || g.assets.logo || ""
+		}
 	}
 
 }
